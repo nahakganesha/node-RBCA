@@ -20,13 +20,6 @@ export default class User extends Model {
     allowNull: false,
     unique: true,
   })
-  uuid!: string;
-
-  @Column({
-    type: DataType.STRING,
-    allowNull: false,
-    unique: true,
-  })
   email!: string;
 
   @Column({
@@ -48,11 +41,7 @@ export default class User extends Model {
     allowNull: false,
   })
   password_hash!: string;
-  @Column({
-    type: DataType.INTEGER,
-    defaultValue: 1,
-  })
-  is_verified!: number;
+
 
   @Column({
     type: DataType.ENUM("active", "inactive", "banned"),
@@ -60,18 +49,6 @@ export default class User extends Model {
     defaultValue: "active",
   })
   status!: "active" | "inactive" | "banned";
-
-  @Column({
-    type: DataType.INTEGER,
-    defaultValue: 0,
-  })
-  login_attempts!: number;
-
-  @Column({
-    type: DataType.DATE,
-    allowNull: true,
-  })
-  lockout_time!: Date | null;
 
   @Column({
     type: DataType.DATE,

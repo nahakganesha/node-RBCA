@@ -4,7 +4,6 @@ import User from "./User";
 import UserProfile from "./UserProfile";
 import UserRole from "./UserRole";
 import UserRoleMapping from "./UserRoleMapping";
-import UserSession from "./UserSessions";
 
 const connection = new Sequelize({
     dialect: "mysql",
@@ -14,7 +13,7 @@ const connection = new Sequelize({
     password: dbConfig.password,
     database: dbConfig.database,
     logging: false,
-    models: [User, UserProfile, UserRole, UserRoleMapping, UserSession],
+    models: [User, UserProfile, UserRole, UserRoleMapping],
 });
 
 export default connection;

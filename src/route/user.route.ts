@@ -7,5 +7,6 @@ const userRouter = Router();
 
 userRouter.post("/register", validate(registerUserSchema), UserController.register);
 userRouter.post("/login", validate(loginUserSchema), UserController.login);
+userRouter.post("/refresh-token", UserController.refreshToken);
 
 export default userRouter;
